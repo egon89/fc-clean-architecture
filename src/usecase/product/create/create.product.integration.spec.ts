@@ -1,7 +1,7 @@
 import { Sequelize } from 'sequelize-typescript';
 import ProductRepository from '../../../infrastructure/product/repository/sequelize/product.repository';
 import CreateProductUseCase from './create.product.usecase';
-import { ProductTypeNotSupportedException } from './create.product.exception';
+import { ProductTypeNotSupportedException } from '../../../domain/product/exception/product-type-not-supported.exception';
 import ProductModel from '../../../infrastructure/product/repository/sequelize/product.model';
 import { InputCreateProductDto, OutputCreateProductDto } from './create.product.dto';
 

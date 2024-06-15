@@ -1,5 +1,5 @@
 import CreateProductUseCase from './create.product.usecase';
-import { ProductTypeNotSupportedException } from './create.product.exception';
+import { ProductTypeNotSupportedException } from '../../../domain/product/exception/product-type-not-supported.exception';
 import { InputCreateProductDto, OutputCreateProductDto } from './create.product.dto';
 
 describe(CreateProductUseCase.name, () => {
