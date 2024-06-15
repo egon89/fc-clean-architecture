@@ -1,5 +1,5 @@
-import Product from "../../../domain/product/entity/product";
-import ListProductUseCase from "./list.product.usecase";
+import Product from '../../../domain/product/entity/product';
+import ListProductUseCase from './list.product.usecase';
 
 describe(ListProductUseCase.name, () => {
   const product = new Product('123', 'Test Product', 9.99);

@@ -10,8 +10,8 @@ describe(CreateProductUseCase.name, () => {
 
   beforeEach(async () => {
     sequelize = new Sequelize({
-      dialect: "sqlite",
-      storage: ":memory:",
+      dialect: 'sqlite',
+      storage: ':memory:',
       logging: false,
       sync: { force: true },
     });
