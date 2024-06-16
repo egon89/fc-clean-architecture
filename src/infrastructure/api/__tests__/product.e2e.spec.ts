@@ -38,7 +38,7 @@ describe('E2E test for product', () => {
       ],
     };
 
-    const { status, body } = await request(app).get('/product');
+    const { status, body } = await request(app).get('/products');
 
     expect(status).toBe(200);
     expect(body).toStrictEqual(expected);
@@ -47,7 +47,7 @@ describe('E2E test for product', () => {
   it('should list all product in xml format', async () => {
     await repository.create(product);
 
-    const { status, text } = await request(app).get('/product').set('Accept', 'application/xml');
+    const { status, text } = await request(app).get('/products').set('Accept', 'application/xml');
 
     expect(status).toBe(200);
     expect(text).toContain('<products>');

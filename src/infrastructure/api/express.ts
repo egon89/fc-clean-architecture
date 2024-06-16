@@ -7,8 +7,8 @@ import ProductModel from '../product/repository/sequelize/product.model';
 
 export const app: Express = express();
 app.use(express.json());
-app.use('/customer', customerRoute);
-app.use('/product', productRoute);
+app.use('/customers', customerRoute);
+app.use('/products', productRoute);
 
 export let sequelize: Sequelize;
 
