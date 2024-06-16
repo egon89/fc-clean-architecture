@@ -1,15 +1,9 @@
-import { toXML } from "jstoxml";
-import { OutputListCustomerDto } from "../../../usecase/customer/list/list.customer.dto";
+import { toXML } from 'jstoxml';
+import { OutputListCustomerDto } from '../../../usecase/customer/list/list.customer.dto';
+import { xmlOptionConfig } from './presenter.config';
 
 export default class CustomerPresenter {
   static listXML(data: OutputListCustomerDto): string {
-    const xmlOption = {
-      header: true,
-      indent: "  ",
-      newline: "\n",
-      allowEmpty: true,
-    };
-
     return toXML(
       {
         customers: {
@@ -25,7 +19,7 @@ export default class CustomerPresenter {
           })),
         },
       },
-      xmlOption
+      xmlOptionConfig
     );
   }
 }
