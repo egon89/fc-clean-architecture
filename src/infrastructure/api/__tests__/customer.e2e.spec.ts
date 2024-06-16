@@ -12,7 +12,7 @@ describe("E2E test for customer", () => {
 
   it("should create a customer", async () => {
     const response = await request(app)
-      .post("/customer")
+      .post("/customers")
       .send({
         name: "John",
         address: {
@@ -32,7 +32,7 @@ describe("E2E test for customer", () => {
   });
 
   it("should not create a customer", async () => {
-    const response = await request(app).post("/customer").send({
+    const response = await request(app).post("/customers").send({
       name: "john",
     });
     expect(response.status).toBe(500);
@@ -40,7 +40,7 @@ describe("E2E test for customer", () => {
 
   it("should list all customer", async () => {
     const response = await request(app)
-      .post("/customer")
+      .post("/customers")
       .send({
         name: "John",
         address: {
@@ -52,7 +52,7 @@ describe("E2E test for customer", () => {
       });
     expect(response.status).toBe(200);
     const response2 = await request(app)
-      .post("/customer")
+      .post("/customers")
       .send({
         name: "Jane",
         address: {
@@ -64,7 +64,7 @@ describe("E2E test for customer", () => {
       });
     expect(response2.status).toBe(200);
 
-    const listResponse = await request(app).get("/customer").send();
+    const listResponse = await request(app).get("/customers").send();
 
     expect(listResponse.status).toBe(200);
     expect(listResponse.body.customers.length).toBe(2);
@@ -76,7 +76,7 @@ describe("E2E test for customer", () => {
     expect(customer2.address.street).toBe("Street 2");
 
     const listResponseXML = await request(app)
-    .get("/customer")
+    .get("/customers")
     .set("Accept", "application/xml")
     .send();
 
